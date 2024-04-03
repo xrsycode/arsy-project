@@ -5,6 +5,14 @@ author 'Kakarot'
 description 'Player health, death, and wounding system with ems job'
 version '1.2.4'
 
+ui_page 'html/index.html'
+
+files {
+	'html/index.html',
+	'html/css/*.css',
+	'html/js/*.js'
+}
+
 shared_scripts {
 	'@qb-core/shared/locale.lua',
 	'locales/en.lua',
