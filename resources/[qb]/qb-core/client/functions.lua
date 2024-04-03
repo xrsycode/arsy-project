@@ -180,19 +180,10 @@ RegisterNUICallback('getNotifyConfig', function(_, cb)
     cb(QBCore.Config.Notify)
 end)
 
-function QBCore.Functions.Notify(text, textype, length)
-    if textype == "primary" then textype = "inform" end
-    if type(text) == "table" then
-        local ttext = text.text or 'Placeholder'
-        local caption = text.caption or 'Placeholder'
-        local ttype = textype or 'inform'
-        local length = length or 5000
-        exports['mythic_notify']:DoCustomHudText(ttype, ttext, length, caption)
-    else
-        local ttype = textype or 'inform'
-        local length = length or 5000
-        exports['mythic_notify']:DoCustomHudText(ttype, text, length)
-    end
+function QBCore.Functions.Notify(text, texttype, length)
+    local color = 0
+    if texttype == 'success' then color = 3 elseif texttype == 'error' then color = 2 else color = 1 end
+    TriggerEvent('notifications:sendNotification', color, text, length or 5000)
 end
 
 function QBCore.Debug(resource, obj, depth)
