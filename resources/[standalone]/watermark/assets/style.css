@@ -1,0 +1,30 @@
+#logo-container {
+  opacity: 0%;
+  transition: all 1s ease;
+}
+.item {
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
+}
+.container {
+  position: absolute;
+  right: 1.5vw;
+  top: 1.5vw;
+}
+.logo {
+  width: 14vh;
+  height: 15vh;
+  background-image: url("./satunusa.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
